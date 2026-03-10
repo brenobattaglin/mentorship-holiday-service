@@ -1,7 +1,7 @@
-import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
+import { HolidaysModule } from './modules/holidays/holidays.module';
 
 @Module({
-  imports: [HttpModule],
+  imports: [HolidaysModule],
 })
 export class AppModule {}
