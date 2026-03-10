@@ -1,6 +1,6 @@
-# nager-service
+# holiday-service
 
-`nager-service` is a Backend-for-Frontend (BFF) built with NestJS. Its primary purpose is to aggregate and streamline data from the [Nager.Date API](https://date.nager.at), providing a clean, optimized interface for frontend applications to consume global public holiday data.
+`holiday-service` is a Backend-for-Frontend (BFF) built with NestJS. Its primary purpose is to aggregate and streamline data from the [Nager.Date API](https://date.nager.at), providing a clean, optimized interface for frontend applications to consume global public holiday data.
 
 ## 🚀 Features
 
@@ -58,11 +58,19 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## 📖 API Endpoints
+## � Postman Collection
+
+A Postman collection is available at the root of the project to help you test all available endpoints quickly.
+
+**File:** `holiday-service.postman_collection.json`
+
+Import it into Postman via **File → Import** and select the file from the project root. Make sure your environment has the `baseUrl` variable set to `http://localhost:3000`.
+
+## �📖 API Endpoints
 
 Once the application is running, you can access the Swagger UI at `http://localhost:3000/api` to view the full interactive documentation.
 
-| Method | Endpoint                | Description                                |
-| :----- | :---------------------- | :----------------------------------------- |
-| GET    | `/holidays/brazil`      | Get public holidays for Brazil.            |
-| GET    | `/next-holidays/brazil` | Get the next upcoming holidays for Brazil. |
+| Method | Endpoint                    | Description                                |
+| :----- | :-------------------------- | :----------------------------------------- |
+| GET    | `/holidays/brazil`          | Get public holidays for Brazil.            |
+| GET    | `/holidays/brazil/upcoming` | Get the next upcoming holidays for Brazil. |
