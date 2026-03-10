@@ -1,0 +1,47 @@
+{
+  "info": {
+    "name": "holiday-service",
+    "description": "BFF that aggregates public holiday data from the Nager.Date API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Holidays",
+      "item": [
+        {
+          "name": "Get public holidays for Brazil",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/holidays/brazil",
+              "host": ["{{baseUrl}}"],
+              "path": ["holidays", "brazil"]
+            },
+            "description": "Returns all public holidays for Brazil in the current year."
+          },
+          "response": []
+        },
+        {
+          "name": "Get upcoming holidays for Brazil",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/holidays/brazil/upcoming",
+              "host": ["{{baseUrl}}"],
+              "path": ["holidays", "brazil", "upcoming"]
+            },
+            "description": "Returns upcoming public holidays for Brazil from today onwards."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
