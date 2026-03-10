@@ -1,10 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { CacheInterceptor } from '@nestjs/cache-manager';
+import { Controller, Get, UseInterceptors } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { HolidayResponseDto } from './dto/holiday-response.dto';
 import { HolidaysService } from './holidays.service';
 
 @ApiTags('holidays')
 @Controller('holidays')
+@UseInterceptors(CacheInterceptor)
 export class HolidaysController {
   constructor(private readonly holidaysService: HolidaysService) {}
 
