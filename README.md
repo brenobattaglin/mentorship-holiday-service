@@ -2,28 +2,28 @@
 
 `holiday-service` is a Backend-for-Frontend (BFF) built with NestJS. Its primary purpose is to aggregate and streamline data from the [Nager.Date API](https://date.nager.at), providing a clean, optimized interface for frontend applications to consume global public holiday data.
 
-## 🚀 Features
+## Features
 
 - **Public Holiday Lookups**: Retrieve holidays for Brazil.
 - **Next Holidays**: Quickly find upcoming holidays for Brazil.
 - **Performance Optimized**: Built-in caching to reduce external API overhead.
 - **Type Safe**: Full TypeScript support with defined DTOs for all responses.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: NestJS
 - **Language**: TypeScript
 - **HTTP Client**: `@nestjs/axios` (Axios)
 - **Documentation**: Swagger / OpenAPI
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running the project, ensure you have the following installed:
 
 - Node.js (v25 or higher recommended)
 - npm
 
-## ⚙️ Installation
+## Installation
 
 1. Clone the repository:
 
@@ -45,7 +45,7 @@ Before running the project, ensure you have the following installed:
    PORT=3000
    ```
 
-## 🏃 Running the App
+## Running the App
 
 ```bash
 # development
@@ -58,7 +58,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## � Postman Collection
+## Postman Collection
 
 A Postman collection is available at the root of the project to help you test all available endpoints quickly.
 
@@ -66,7 +66,7 @@ A Postman collection is available at the root of the project to help you test al
 
 Import it into Postman via **File → Import** and select the file from the project root. Make sure your environment has the `baseUrl` variable set to `http://localhost:3000`.
 
-## �📖 API Endpoints
+## API Endpoints
 
 Once the application is running, you can access the Swagger UI at `http://localhost:3000/api` to view the full interactive documentation.
 
