@@ -1,7 +1,7 @@
 import { HttpModule } from '@nestjs/axios';
 import { CacheModule } from '@nestjs/cache-manager';
 import { Module } from '@nestjs/common';
-import { HolidaysAdapter } from './holidays.adapter';
+import { HolidaysAdapter } from './nager.adapter';
 import { HolidaysController } from './holidays.controller';
 import { HolidaysService } from './holidays.service';
 

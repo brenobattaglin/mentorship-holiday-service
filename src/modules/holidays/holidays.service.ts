@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HolidaysAdapter } from './holidays.adapter';
+import { HolidaysAdapter } from './nager.adapter';
 import { HolidayResponseDto } from './dto/holiday-response.dto';
 
 @Injectable()

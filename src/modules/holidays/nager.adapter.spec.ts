@@ -1,10 +1,10 @@
 import { HttpService } from '@nestjs/axios';
 import { InternalServerErrorException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { AxiosResponse } from 'axios';
+import { AxiosResponse, InternalAxiosRequestConfig, AxiosHeaders } from 'axios';
 import { of, throwError } from 'rxjs';
 import { NagerHolidayDto } from './dto/nager-holiday.dto';
-import { HolidaysAdapter } from './holidays.adapter';
+import { HolidaysAdapter } from './nager.adapter';
 
 const mockHolidays: NagerHolidayDto[] = [
   {
@@ -32,7 +32,7 @@ const mockAxiosResponse = (data: NagerHolidayDto[]): AxiosResponse => ({
   status: 200,
   statusText: 'OK',
   headers: {},
-  config: { headers: {} } as any,
+  config: { headers: new AxiosHeaders() } as InternalAxiosRequestConfig,
 });
 
 describe('HolidaysAdapter', () => {
@@ -65,10 +65,11 @@ describe('HolidaysAdapter', () => {
   describe('getPublicHolidays', () => {
     it('should return holidays for the given year and country code', async () => {
       httpService.get.mockReturnValue(of(mockAxiosResponse(mockHolidays)));
+      const spy = jest.spyOn(httpService, 'get');
 
       const result = await adapter.getPublicHolidays(2025, 'BR');
 
-      expect(httpService.get).toHaveBeenCalledWith(
+      expect(spy).toHaveBeenCalledWith(
         'https://date.nager.at/api/v3/PublicHolidays/2025/BR',
       );
       expect(result).toEqual(mockHolidays);

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HolidayResponseDto } from './dto/holiday-response.dto';
 import { NagerHolidayDto } from './dto/nager-holiday.dto';
-import { HolidaysAdapter } from './holidays.adapter';
+import { HolidaysAdapter } from './nager.adapter';
 import { HolidaysService } from './holidays.service';
 
 const mockNagerHolidays: NagerHolidayDto[] = [
@@ -78,10 +78,11 @@ describe('HolidaysService', () => {
     it('should call the adapter with the current year and BR country code', async () => {
       adapter.getPublicHolidays.mockResolvedValue([]);
       const currentYear = new Date().getFullYear();
+      const spy = jest.spyOn(adapter, 'getPublicHolidays');
 
       await service.getBrazilHolidays();
 
-      expect(adapter.getPublicHolidays).toHaveBeenCalledWith(currentYear, 'BR');
+      expect(spy).toHaveBeenCalledWith(currentYear, 'BR');
     });
   });
 
