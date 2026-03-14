@@ -25,20 +25,13 @@ Before running the project, ensure you have the following installed:
 
 ## Installation
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/nager-service.git
-   cd nager-service
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Environment Setup:
+2. Environment Setup:
    Create a `.env` file in the root directory and define the base URL for the Nager API:
    ```env
    NAGER_API_URL=https://date.nager.at/api/v3
